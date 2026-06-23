@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#081120;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+
+width:90%;
+max-width:500px;
+background:#111827;
+padding:30px;
+border-radius:15px;
+
+}
+
+h1{
+text-align:center;
+margin-bottom:20px;
+}
+
+input,select{
+
+width:100%;
+padding:15px;
+margin-top:10px;
+border:none;
+border-radius:8px;
+
+}
+
+button{
+
+width:100%;
+padding:15px;
+margin-top:15px;
+background:#22c55e;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Create Account</h1>
+
+<input id="firstname" placeholder="First Name">
+
+<input id="surname" placeholder="Surname">
+
+<select id="country">
+
+<option>Select Country</option>
+
+<option>Nigeria</option>
+<option>United Kingdom</option>
+<option>Germany</option>
+<option>United States</option>
+
+</select>
+
+<input id="phone" placeholder="Phone Number">
+
+<input id="email" placeholder="Email">
+
+<input id="password" type="password" placeholder="Password">
+
+<button id="registerBtn">
+
+Create Account
+
+</button>
+
+</div>
+
+<script type="module" src="register.js"></script>
+
+</body>
+</html>
