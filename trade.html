@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>AI Trade Signals</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#edf3ff;
+padding-bottom:90px;
+}
+
+.header{
+background:white;
+padding:20px;
+}
+
+.signal{
+
+background:white;
+margin:15px;
+padding:20px;
+border-radius:15px;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+
+animation:fade 1s ease;
+}
+
+.buy{
+
+color:green;
+font-weight:bold;
+font-size:20px;
+
+}
+
+.sell{
+
+color:red;
+font-weight:bold;
+font-size:20px;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+.bottom{
+
+position:fixed;
+bottom:0;
+width:100%;
+background:white;
+display:flex;
+justify-content:space-around;
+padding:15px;
+
+}
+
+.bottom a{
+
+text-decoration:none;
+color:black;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h2>AI Trade Signals</h2>
+
+</div>
+
+
+<div class="signal">
+
+<h3>BTC/USD</h3>
+
+<p class="buy">
+
+BUY ↑
+
+</p>
+
+<p>
+
+Confidence: 95%
+
+</p>
+
+</div>
+
+
+<div class="signal">
+
+<h3>ETH/USD</h3>
+
+<p class="sell">
+
+SELL ↓
+
+</p>
+
+<p>
+
+Confidence: 87%
+
+</p>
+
+</div>
+
+
+<div class="signal">
+
+<h3>USDT/USD</h3>
+
+<p class="buy">
+
+BUY ↑
+
+</p>
+
+<p>
+
+Confidence: 92%
+
+</p>
+
+</div>
+
+
+<div class="bottom">
+
+<a href="dashboard.html">
+
+Home
+
+</a>
+
+<a href="invest.html">
+
+Invest
+
+</a>
+
+<a href="trade.html">
+
+Trade
+
+</a>
+
+<a href="assets.html">
+
+Assets
+
+</a>
+
+<a href="profile.html">
+
+Profile
+
+</a>
+
+</div>
+
+</body>
+</html>
