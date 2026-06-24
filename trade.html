@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>AI Trade Signals</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+
+min-height:100vh;
+padding-bottom:90px;
+overflow-x:hidden;
+color:white;
+
+background:
+linear-gradient(
+rgba(8,17,32,.88),
+rgba(8,17,32,.95)
+);
+
+}
+
+body::before{
+
+content:"";
+position:fixed;
+
+width:500px;
+height:500px;
+
+background:#22c55e;
+
+filter:blur(180px);
+
+top:-150px;
+left:-100px;
+
+opacity:.2;
+
+animation:move1 10s infinite alternate;
+
+}
+
+body::after{
+
+content:"";
+position:fixed;
+
+width:450px;
+height:450px;
+
+background:#3b82f6;
+
+filter:blur(180px);
+
+bottom:-150px;
+right:-100px;
+
+opacity:.2;
+
+animation:move2 10s infinite alternate;
+
+}
+
+@keyframes move1{
+
+100%{
+
+transform:
+translate(150px,100px);
+
+}
+
+}
+
+@keyframes move2{
+
+100%{
+
+transform:
+translate(-150px,-100px);
+
+}
+
+}
+
+.header{
+
+padding:25px;
+position:relative;
+z-index:2;
+
+}
+
+.header h2{
+
+font-size:32px;
+
+}
+
+.header span{
+
+color:#22c55e;
+
+}
+
+.header p{
+
+margin-top:10px;
+color:#cbd5e1;
+
+}
+
+.market{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(140px,1fr));
+
+gap:10px;
+
+padding:15px;
+
+}
+
+.coin{
+
+background:
+rgba(17,24,39,.9);
+
+padding:15px;
+
+border-radius:15px;
+
+backdrop-filter:blur(10px);
+
+text-align:center;
+
+}
+
+.coin h4{
+
+margin-bottom:10px;
+
+}
+
+.coin p{
+
+color:#22c55e;
+
+font-size:14px;
+
+}
+
+.signal{
+
+background:
+rgba(17,24,39,.9);
+
+margin:15px;
+
+padding:20px;
+
+border-radius:20px;
+
+backdrop-filter:blur(10px);
+
+box-shadow:
+0 0 25px rgba(0,0,0,.3);
+
+animation:fade .8s ease;
+
+}
+
+.buy{
+
+color:#22c55e;
+font-size:20px;
+font-weight:bold;
+
+}
+
+.sell{
+
+color:#ff5f5f;
+font-size:20px;
+font-weight:bold;
+
+}
+
+.progress{
+
+width:100%;
+height:8px;
+
+background:#1f2937;
+
+border-radius:20px;
+
+margin-top:10px;
+
+overflow:hidden;
+
+}
+
+.progress span{
+
+display:block;
+
+height:100%;
+
+background:#22c55e;
+
+}
+
+.marketSentiment{
+
+background:
+rgba(17,24,39,.9);
+
+margin:15px;
+
+padding:20px;
+
+border-radius:20px;
+
+}
+
+.marketSentiment h3{
+
+margin-bottom:15px;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:
+translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+transform:
+translateY(0);
+
+}
+
+}
+
+.bottom{
+
+position:fixed;
+
+bottom:0;
+width:100%;
+
+background:
+rgba(17,24,39,.95);
+
+display:flex;
+
+justify-content:space-around;
+
+padding:18px;
+
+backdrop-filter:blur(15px);
+
+}
+
+.bottom a{
+
+text-decoration:none;
+color:white;
+
+}
+
+.bottom a:hover{
+
+color:#22c55e;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h2>
+
+AI <span>Trade Signals</span>
+
+</h2>
+
+<p>
+
+Market insights and crypto analysis
+
+</p>
+
+</div>
+
+<div class="market">
+
+<div class="coin">
+
+<h4>BTC</h4>
+
+<p>$62,865</p>
+
+</div>
+
+<div class="coin">
+
+<h4>ETH</h4>
+
+<p>$3,540</p>
+
+</div>
+
+<div class="coin">
+
+<h4>SOL</h4>
+
+<p>$145</p>
+
+</div>
+
+<div class="coin">
+
+<h4>XRP</h4>
+
+<p>$0.59</p>
+
+</div>
+
+<div class="coin">
+
+<h4>BNB</h4>
+
+<p>$608</p>
+
+</div>
+
+<div class="coin">
+
+<h4>USDT</h4>
+
+<p>$1.00</p>
+
+</div>
+
+</div>
+
+<div class="signal">
+
+<h3>BTC/USD</h3>
+
+<p class="buy">
+
+BUY ↑
+
+</p>
+
+<p>
+
+Confidence: 95%
+
+</p>
+
+<div class="progress">
+
+<span style="width:95%">
+</span>
+
+</div>
+
+</div>
+
+<div class="signal">
+
+<h3>ETH/USD</h3>
+
+<p class="sell">
+
+SELL ↓
+
+</p>
+
+<p>
+
+Confidence: 87%
+
+</p>
+
+<div class="progress">
+
+<span style="width:87%">
+</span>
+
+</div>
+
+</div>
+
+<div class="signal">
+
+<h3>SOL/USD</h3>
+
+<p class="buy">
+
+BUY ↑
+
+</p>
+
+<p>
+
+Confidence: 91%
+
+</p>
+
+<div class="progress">
+
+<span style="width:91%">
+</span>
+
+</div>
+
+</div>
+
+<div class="signal">
+
+<h3>XRP/USD</h3>
+
+<p class="buy">
+
+BUY ↑
+
+</p>
+
+<p>
+
+Confidence: 89%
+
+</p>
+
+<div class="progress">
+
+<span style="width:89%">
+</span>
+
+</div>
+
+</div>
+
+<div class="marketSentiment">
+
+<h3>Market Sentiment</h3>
+
+<p>📈 Bullish Market Trend: 78%</p>
+
+<p>⚡ AI Confidence Level: High</p>
+
+<p>🔥 Top Asset Today: Bitcoin</p>
+
+</div>
+
+<div class="bottom">
+
+<a href="dashboard.html">
+
+Home
+
+</a>
+
+<a href="invest.html">
+
+Invest
+
+</a>
+
+<a href="trade.html">
+
+Trade
+
+</a>
+
+<a href="assets.html">
+
+Assets
+
+</a>
+
+<a href="profile.html">
+
+Profile
+
+</a>
+
+</div>
+
+</body>
+</html>
