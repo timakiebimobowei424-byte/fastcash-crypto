@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1">
+
+<title>Mark Investment Dashboard</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+
+margin:0;
+padding-bottom:100px;
+
+background:#081120;
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+/* Animated background */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:
+linear-gradient(
+45deg,
+#081120,
+#111827,
+#081120
+);
+
+background-size:400% 400%;
+
+animation:bgMove 12s ease infinite;
+
+z-index:-2;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:300px;
+height:300px;
+
+border-radius:50%;
+
+background:
+rgba(34,197,94,.15);
+
+filter:blur(100px);
+
+top:-100px;
+right:-100px;
+
+animation:floatGlow 8s infinite;
+
+z-index:-1;
+
+}
+
+@keyframes bgMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+@keyframes floatGlow{
+
+50%{
+
+transform:
+translateY(50px)
+translateX(-40px);
+
+}
+
+}
+
+.header{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:25px;
+
+}
+
+.header h2{
+
+font-size:26px;
+
+}
+
+.profile{
+
+width:50px;
+height:50px;
+
+background:#22c55e;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-weight:bold;
+
+}
+
+.card{
+
+margin:15px;
+
+padding:25px;
+
+border-radius:25px;
+
+background:
+rgba(17,24,39,.85);
+
+backdrop-filter:blur(12px);
+
+border:
+1px solid
+rgba(255,255,255,.05);
+
+box-shadow:
+0 0 20px rgba(0,0,0,.3);
+
+}
+
+.assets h2{
+
+font-size:45px;
+
+margin-top:10px;
+
+color:#22c55e;
+
+}
+
+.actions{
+
+display:flex;
+gap:15px;
+
+margin-top:20px;
+
+}
+
+.btn{
+
+flex:1;
+
+padding:16px;
+
+border:none;
+
+border-radius:15px;
+
+background:#22c55e;
+
+color:white;
+
+font-size:15px;
+
+cursor:pointer;
+
+}
+
+.market{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(150px,1fr));
+
+gap:10px;
+
+margin-top:15px;
+
+}
+
+.coin{
+
+background:#1f2937;
+
+padding:15px;
+
+border-radius:15px;
+
+text-align:center;
+
+}
+
+.coin h4{
+
+margin-bottom:8px;
+
+}
+
+.bottom{
+
+position:fixed;
+
+bottom:0;
+width:100%;
+
+padding:20px;
+
+display:flex;
+justify-content:space-around;
+
+background:
+rgba(17,24,39,.95);
+
+backdrop-filter:blur(15px);
+
+}
+
+.bottom a{
+
+text-decoration:none;
+
+color:white;
+
+font-size:14px;
+
+}
+
+.bottom a:hover{
+
+color:#22c55e;
+
+}
+
+#logoutBtn{
+
+position:fixed;
+
+top:25px;
+right:25px;
+
+padding:12px 16px;
+
+border:none;
+
+border-radius:12px;
+
+background:#22c55e;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h2>
+
+Mark Investment
+
+</h2>
+
+<div class="profile">
+
+TE
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<p>Total Assets</p>
+
+<div class="assets">
+
+<h2 id="balance">
+
+$0.00
+
+</h2>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+
+Quick Actions
+
+</h3>
+
+<div class="actions">
+
+<button
+class="btn"
+onclick="window.location='deposit.html'">
+
+Deposit
+
+</button>
+
+<button
+class="btn"
+onclick="window.location='withdraw.html'">
+
+Withdraw
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+
+Live Market
+
+</h3>
+
+<div class="market">
+
+<div class="coin">
+
+<h4>BTC</h4>
+<p>$67,093</p>
+
+</div>
+
+<div class="coin">
+
+<h4>ETH</h4>
+<p>$3,540</p>
+
+</div>
+
+<div class="coin">
+
+<h4>USDT</h4>
+<p>$1.00</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="bottom">
+
+<a href="dashboard.html">
+
+Home
+
+</a>
+
+<a href="invest.html">
+
+Invest
+
+</a>
+
+<a href="trade.html">
+
+Trade
+
+</a>
+
+<a href="assets.html">
+
+Assets
+
+</a>
+
+<a href="profile.html">
+
+Profile
+
+</a>
+
+</div>
+
+
+<button id="logoutBtn">
+
+Logout
+
+</button>
+
+
+<script
+type="module"
+src="wallet.js">
+</script>
+
+
+<script type="module">
+
+import { auth }
+from "./config.js";
+
+import {
+signOut
+}
+from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+document
+.getElementById("logoutBtn")
+.onclick = async()=>{
+
+await signOut(auth);
+
+window.location="login.html";
+
+};
+
+</script>
+
+</body>
+
+</html>
