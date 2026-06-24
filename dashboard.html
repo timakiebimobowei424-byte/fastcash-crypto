@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1">
+
+<title>Mark Investment Dashboard</title>
+
+<style>
+
+body{
+
+margin:0;
+font-family:Arial;
+background:#edf3ff;
+padding-bottom:90px;
+
+}
+
+.header{
+
+background:white;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+.profile{
+
+width:45px;
+height:45px;
+background:#1877f2;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+
+}
+
+.card{
+
+background:white;
+margin:15px;
+padding:20px;
+border-radius:15px;
+box-shadow:
+0 2px 10px rgba(0,0,0,.1);
+
+}
+
+.assets{
+
+font-size:40px;
+color:#1877f2;
+
+}
+
+.actions{
+
+display:flex;
+gap:10px;
+
+}
+
+.btn{
+
+flex:1;
+padding:15px;
+border:none;
+border-radius:10px;
+background:#1877f2;
+color:white;
+
+}
+
+.bottom{
+
+position:fixed;
+bottom:0;
+width:100%;
+background:white;
+display:flex;
+justify-content:space-around;
+padding:15px;
+
+}
+
+.bottom a{
+
+text-decoration:none;
+color:black;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h2>Mark Invest</h2>
+
+<div class="profile">
+
+TE
+
+</div>
+
+</div>
+
+<div class="card">
+
+<p>Total Assets</p>
+
+<div class="assets">
+
+<h2 id="balance">$0.00</h2>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Quick Actions</h3>
+
+<div class="actions">
+
+<button
+class="btn"
+onclick="window.location='deposit.html'">
+
+Deposit
+
+</button>
+
+
+
+
+
+<button class="btn" onclick="window.location='withdraw.html'">
+Withdraw
+</button>
+
+
+
+
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Live BTC</h3>
+
+<p>$62,865</p>
+
+</div>
+
+<div class="bottom">
+
+<a href="dashboard.html">
+
+Home
+
+</a>
+
+<a href="invest.html">
+
+Invest
+
+</a>
+
+<a href="trade.html">
+
+Trade
+
+</a>
+
+<a href="assets.html">
+
+Assets
+
+</a>
+
+<a href="profile.html">
+
+Profile
+
+</a>
+
+</div>
+
+</body>
+
+</html>
