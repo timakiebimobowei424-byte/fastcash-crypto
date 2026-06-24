@@ -4,6 +4,49 @@
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width,initial-scale=1.0'>
 <title>Mark's Investment ltd</title>
+  .testimonial-slider{
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+margin-top:30px;
+
+}
+
+.testimonialCard{
+
+background:rgba(17,24,39,.92);
+
+padding:30px;
+
+border-radius:25px;
+
+width:100%;
+max-width:700px;
+
+text-align:center;
+
+backdrop-filter:blur(10px);
+
+box-shadow:
+0 0 25px rgba(0,0,0,.3);
+
+transition:.6s;
+
+}
+
+.earned{
+
+margin:15px 0;
+
+font-size:28px;
+
+font-weight:bold;
+
+color:#22c55e;
+
+}
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 html{scroll-behavior:smooth}
@@ -75,7 +118,38 @@ nav{display:none}
 <button class="btn secondary" id="loginBtn">Sign In</button>
 </div>
 </section>
+<section class="section">
 
+<h2 class="title">
+Community Testimonials
+</h2>
+
+<p class="subtitle">
+Experiences shared by platform users
+</p>
+
+<div class="testimonial-slider">
+
+<div id="testimonialCard"
+class="testimonialCard">
+
+<h3 id="userName">
+Michael A.
+</h3>
+
+<div class="earned">
+Portfolio Growth: +$4,500
+</div>
+
+<p id="message">
+"Smooth platform experience and easy navigation."
+</p>
+
+</div>
+
+</div>
+
+</section>
 <section class="section">
 <div class="grid">
 <div class="card"><h2>🔒 Protection & Security</h2><p>Secure investment protection and account safety.</p></div>
@@ -534,5 +608,167 @@ error
 };
 
 </script>
+  <script>
+
+const testimonials=[
+
+{
+name:"Michael A.",
+amount:"+$4,500",
+message:"Smooth platform experience and easy navigation."
+},
+
+{
+name:"Sarah K.",
+amount:"+$7,200",
+message:"Clean dashboard and useful market tools."
+},
+
+{
+name:"Daniel T.",
+amount:"+$3,100",
+message:"Easy deposits and responsive support."
+},
+
+{
+name:"James O.",
+amount:"+$8,400",
+message:"The interface feels modern and simple."
+},
+
+{
+name:"Amanda R.",
+amount:"+$5,900",
+message:"Great portfolio tracking tools."
+},
+
+{
+name:"John E.",
+amount:"+$2,700",
+message:"Fast account setup process."
+},
+
+{
+name:"David M.",
+amount:"+$6,300",
+message:"I like the live market features."
+},
+
+{
+name:"Sophia L.",
+amount:"+$9,000",
+message:"Clean investment experience."
+},
+
+{
+name:"Kevin B.",
+amount:"+$4,800",
+message:"Everything feels organized."
+},
+
+{
+name:"Grace W.",
+amount:"+$10,200",
+message:"Very easy platform to navigate."
+},
+
+{
+name:"Olivia N.",
+amount:"+$7,700",
+message:"Excellent user experience."
+},
+
+{
+name:"Chris P.",
+amount:"+$3,900",
+message:"Helpful dashboard layout."
+},
+
+{
+name:"Emma T.",
+amount:"+$6,600",
+message:"Modern design and simple controls."
+},
+
+{
+name:"Brian D.",
+amount:"+$5,100",
+message:"Market information is easy to read."
+},
+
+{
+name:"Lisa M.",
+amount:"+$8,700",
+message:"Professional-looking investment platform."
+},
+
+{
+name:"Jason K.",
+amount:"+$4,200",
+message:"Very smooth experience."
+},
+
+{
+name:"Samuel A.",
+amount:"+$7,900",
+message:"Simple and clean interface."
+},
+
+{
+name:"Mary O.",
+amount:"+$5,800",
+message:"Useful portfolio sections."
+},
+
+{
+name:"Victor T.",
+amount:"+$11,000",
+message:"Easy account management."
+},
+
+{
+name:"Jennifer C.",
+amount:"+$9,500",
+message:"Strong overall platform experience."
+}
+
+];
+
+let current=0;
+
+function rotateTestimonials(){
+
+document.getElementById(
+"userName"
+).innerText=
+testimonials[current].name;
+
+document.querySelector(
+".earned"
+).innerText=
+"Portfolio Growth: " +
+testimonials[current].amount;
+
+document.getElementById(
+"message"
+).innerText=
+testimonials[current].message;
+
+current++;
+
+if(current>=testimonials.length){
+
+current=0;
+
+}
+
+}
+
+setInterval(
+rotateTestimonials,
+3000
+);
+
+  </script>
 </body>
 </html>
