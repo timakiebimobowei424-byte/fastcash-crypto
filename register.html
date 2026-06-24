@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Create Account</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:20px;
+
+background:
+linear-gradient(
+rgba(8,17,32,.85),
+rgba(8,17,32,.95)
+),
+
+url("https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1200");
+
+background-size:cover;
+background-position:center;
+
+color:white;
+
+}
+
+.container{
+
+width:100%;
+max-width:500px;
+
+padding:35px;
+
+border-radius:25px;
+
+background:
+rgba(17,24,39,.90);
+
+backdrop-filter:blur(10px);
+
+box-shadow:
+0 0 35px rgba(0,0,0,.4);
+
+}
+
+.logo{
+
+text-align:center;
+margin-bottom:25px;
+
+}
+
+.logo h1{
+
+font-size:35px;
+
+}
+
+.logo span{
+
+color:#22c55e;
+
+}
+
+.logo p{
+
+margin-top:10px;
+color:#cbd5e1;
+
+}
+
+.row{
+
+display:flex;
+gap:10px;
+
+}
+
+.input-group{
+
+margin-top:15px;
+flex:1;
+
+}
+
+input,
+select{
+
+width:100%;
+
+padding:16px;
+
+border:none;
+outline:none;
+
+border-radius:12px;
+
+background:#1f2937;
+
+color:white;
+
+font-size:15px;
+
+}
+
+input::placeholder{
+
+color:#94a3b8;
+
+}
+
+select{
+
+cursor:pointer;
+
+}
+
+button{
+
+width:100%;
+
+padding:16px;
+
+margin-top:25px;
+
+background:#22c55e;
+
+border:none;
+
+border-radius:12px;
+
+color:white;
+
+font-size:16px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+button:hover{
+
+opacity:.9;
+
+}
+
+.bottom{
+
+text-align:center;
+margin-top:20px;
+
+}
+
+.bottom a{
+
+color:#22c55e;
+text-decoration:none;
+
+}
+
+.market{
+
+display:flex;
+gap:10px;
+margin-top:25px;
+
+}
+
+.coin{
+
+flex:1;
+
+background:#1f2937;
+
+padding:12px;
+
+border-radius:12px;
+
+text-align:center;
+
+}
+
+.coin h4{
+
+margin-bottom:8px;
+
+}
+
+.coin p{
+
+font-size:12px;
+color:#cbd5e1;
+
+}
+
+@media(max-width:600px){
+
+.row{
+
+flex-direction:column;
+
+}
+
+.market{
+
+flex-direction:column;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+
+<h1>
+
+Mark <span>Investment</span>
+
+</h1>
+
+<p>
+
+Create your investment account
+
+</p>
+
+</div>
+
+
+<div class="row">
+
+<div class="input-group">
+
+<input
+id="firstname"
+placeholder="First Name">
+
+</div>
+
+<div class="input-group">
+
+<input
+id="surname"
+placeholder="Surname">
+
+</div>
+
+</div>
+
+
+<div class="input-group">
+
+<select id="country">
+
+<option>Select Country</option>
+
+<option>Afghanistan</option>
+<option>Albania</option>
+<option>Algeria</option>
+<option>Andorra</option>
+<option>Angola</option>
+<option>Argentina</option>
+<option>Australia</option>
+<option>Brazil</option>
+<option>Canada</option>
+<option>China</option>
+<option>France</option>
+<option>Germany</option>
+<option>Ghana</option>
+<option>India</option>
+<option>Italy</option>
+<option>Japan</option>
+<option>Kenya</option>
+<option>Nigeria</option>
+<option>South Africa</option>
+<option>United Kingdom</option>
+<option>United States</option>
+<option>Zimbabwe</option>
+
+</select>
+
+</div>
+
+
+<div class="input-group">
+
+<input
+id="phone"
+placeholder="Phone Number">
+
+</div>
+
+
+<div class="input-group">
+
+<input
+id="email"
+type="email"
+placeholder="Email Address">
+
+</div>
+
+
+<div class="input-group">
+
+<input
+id="password"
+type="password"
+placeholder="Password">
+
+</div>
+
+
+<button id="registerBtn">
+
+Create Account
+
+</button>
+
+
+<div class="bottom">
+
+Already have an account?
+
+<a href="login.html">
+
+Sign In
+
+</a>
+
+</div>
+
+
+<div class="market">
+
+<div class="coin">
+
+<h4>BTC</h4>
+<p>$67,093</p>
+
+</div>
+
+<div class="coin">
+
+<h4>ETH</h4>
+<p>$3,540</p>
+
+</div>
+
+<div class="coin">
+
+<h4>USDT</h4>
+<p>$1.00</p>
+
+</div>
+
+</div>
+
+</div>
+
+<script type="module"
+src="register.js"></script>
+
+</body>
+</html>
