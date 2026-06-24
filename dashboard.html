@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1">
+
+<title>Mark Investment Dashboard</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+
+padding-bottom:120px;
+color:white;
+overflow-x:hidden;
+background:#081120;
+
+}
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:600px;
+height:600px;
+
+background:#22c55e;
+
+filter:blur(180px);
+
+top:-200px;
+left:-200px;
+
+opacity:.12;
+
+animation:move1 12s infinite alternate;
+
+z-index:-1;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:600px;
+height:600px;
+
+background:#3b82f6;
+
+filter:blur(180px);
+
+bottom:-200px;
+right:-200px;
+
+opacity:.12;
+
+animation:move2 12s infinite alternate;
+
+z-index:-1;
+
+}
+
+@keyframes move1{
+
+100%{
+
+transform:
+translate(200px,100px);
+
+}
+
+}
+
+@keyframes move2{
+
+100%{
+
+transform:
+translate(-200px,-100px);
+
+}
+
+}
+
+.header{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:25px;
+
+}
+
+.header h2{
+
+font-size:30px;
+
+}
+
+.header span{
+
+color:#22c55e;
+
+}
+
+.profile{
+
+width:55px;
+height:55px;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+#22c55e,
+#3b82f6
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-weight:bold;
+
+}
+
+.card{
+
+margin:15px;
+
+padding:25px;
+
+border-radius:25px;
+
+background:
+rgba(17,24,39,.90);
+
+backdrop-filter:blur(15px);
+
+box-shadow:
+0 0 30px rgba(0,0,0,.3);
+
+}
+
+.assets h2{
+
+font-size:45px;
+margin-top:10px;
+color:#22c55e;
+
+}
+
+.assets p{
+
+color:#cbd5e1;
+margin-top:5px;
+
+}
+
+.actions{
+
+display:flex;
+gap:15px;
+margin-top:20px;
+
+}
+
+.btn{
+
+flex:1;
+
+padding:16px;
+
+border:none;
+
+border-radius:15px;
+
+background:#22c55e;
+
+color:white;
+
+cursor:pointer;
+
+font-size:15px;
+
+}
+
+.market{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(120px,1fr));
+
+gap:10px;
+
+margin-top:15px;
+
+}
+
+.coin{
+
+background:#1f2937;
+
+padding:15px;
+
+border-radius:15px;
+
+text-align:center;
+
+}
+
+.coin h4{
+
+margin-bottom:8px;
+
+}
+
+.coin p{
+
+font-size:13px;
+color:#22c55e;
+
+}
+
+.progress{
+
+height:10px;
+
+background:#1f2937;
+
+border-radius:30px;
+
+overflow:hidden;
+
+margin-top:10px;
+
+}
+
+.progress span{
+
+display:block;
+
+height:100%;
+
+background:#22c55e;
+
+}
+
+.news{
+
+margin-top:15px;
+
+padding:15px;
+
+background:#1f2937;
+
+border-radius:15px;
+
+}
+
+.news p{
+
+margin-top:8px;
+color:#cbd5e1;
+
+}
+
+.bottom{
+
+position:fixed;
+bottom:0;
+left:0;
+
+width:100%;
+
+display:flex;
+justify-content:space-around;
+align-items:center;
+
+padding:18px;
+
+background:
+rgba(17,24,39,.95);
+
+backdrop-filter:blur(15px);
+
+z-index:9999;
+
+}
+
+.bottom a{
+
+text-decoration:none;
+color:white;
+
+font-size:14px;
+
+}
+
+.bottom a:hover{
+
+color:#22c55e;
+
+}
+
+#logoutBtn{
+
+position:fixed;
+
+top:20px;
+right:20px;
+
+padding:12px 16px;
+
+border:none;
+
+border-radius:12px;
+
+background:#22c55e;
+
+color:white;
+
+cursor:pointer;
+
+z-index:10000;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h2>
+
+Mark <span>Investment</span>
+
+</h2>
+
+<div class="profile">
+
+TE
+
+</div>
+
+</div>
+
+<div class="card">
+
+<p>Total Assets</p>
+
+<div class="assets">
+
+<h2 id="balance">
+
+$0.00
+
+</h2>
+
+<p>
+
+AI Portfolio Growth +18.6%
+
+</p>
+
+</div>
+
+<div class="actions">
+
+<button
+class="btn"
+onclick="window.location='deposit.html'">
+
+Deposit
+
+</button>
+
+<button
+class="btn"
+onclick="window.location='withdraw.html'">
+
+Withdraw
+
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Trending Crypto
+
+</h3>
+
+<div class="market">
+
+<div class="coin">
+
+<h4>BTC</h4>
+<p>$67,093</p>
+
+</div>
+
+<div class="coin">
+
+<h4>ETH</h4>
+<p>$3,540</p>
+
+</div>
+
+<div class="coin">
+
+<h4>SOL</h4>
+<p>$145</p>
+
+</div>
+
+<div class="coin">
+
+<h4>XRP</h4>
+<p>$0.59</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+AI Market Sentiment
+
+</h3>
+
+<p>
+
+Bullish Market Confidence
+
+</p>
+
+<div class="progress">
+
+<span style="width:84%;"></span>
+
+</div>
+
+<p style="margin-top:10px">
+
+84%
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Fear & Greed Index
+
+</h3>
+
+<p>
+
+Greed Level: 73/100
+
+</p>
+
+<div class="progress">
+
+<span style="width:73%;"></span>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Top Movers Today
+
+</h3>
+
+<div class="market">
+
+<div class="coin">
+
+<h4>DOGE</h4>
+<p>+12.4%</p>
+
+</div>
+
+<div class="coin">
+
+<h4>ADA</h4>
+<p>+8.7%</p>
+
+</div>
+
+<div class="coin">
+
+<h4>BNB</h4>
+<p>+6.2%</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Market News
+
+</h3>
+
+<div class="news">
+
+🔥 Bitcoin continues strong momentum
+
+</div>
+
+<div class="news">
+
+📈 Ethereum institutional demand rises
+
+</div>
+
+<div class="news">
+
+⚡ AI predicts bullish crypto trend
+
+</div>
+
+</div>
+
+<div class="bottom">
+
+<a href="dashboard.html">
+🏠 Home
+</a>
+
+<a href="invest.html">
+💰 Invest
+</a>
+
+<a href="trade.html">
+📈 Trade
+</a>
+
+<a href="assets.html">
+💼 Assets
+</a>
+
+<a href="profile.html">
+👤 Profile
+</a>
+
+</div>
+
+<button id="logoutBtn">
+
+Logout
+
+</button>
+
+<script
+type="module"
+src="wallet.js">
+</script>
+
+<script type="module">
+
+import { auth }
+from "./config.js";
+
+import {
+signOut
+}
+from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+document
+.getElementById("logoutBtn")
+.onclick = async()=>{
+
+await signOut(auth);
+
+window.location="login.html";
+
+};
+
+</script>
+
+</body>
+</html>
