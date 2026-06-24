@@ -259,7 +259,7 @@ display:flex;
 justify-content:space-around;
 align-items:center;
 
-padding:18px;
+padding:12px;
 
 background:
 rgba(17,24,39,.95);
@@ -268,32 +268,58 @@ backdrop-filter:blur(15px);
 
 z-index:9999;
 
-}
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-backdrop-filter:blur(15px);
+border-top:
+1px solid rgba(255,255,255,.08);
 
 }
 
-.bottom a{
+.navItem{
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+text-decoration:none;
+
+color:#cbd5e1;
+
+padding:10px 14px;
+
+border-radius:14px;
+
+transition:.3s;
+
+font-size:12px;
+
+}
+
+.icon{
+
+font-size:20px;
+margin-bottom:5px;
+
+}
+
+.navItem:hover{
+
+background:
+rgba(34,197,94,.15);
+
+color:#22c55e;
+
+transform:
+translateY(-3px);
+
+}
+
+.active{
+
+background:
+rgba(34,197,94,.15);
+
+color:#22c55e;
+
+}
 
 text-decoration:none;
 color:white;
@@ -529,33 +555,38 @@ Weekly Growth Progress
 
 <div class="bottom">
 
-<a href="dashboard.html">
+<a href="dashboard.html" class="navItem active">
 
-Home
-
-</a>
-
-<a href="invest.html">
-
-Invest
+<div class="icon">🏠</div>
+<span>Home</span>
 
 </a>
 
-<a href="trade.html">
+<a href="invest.html" class="navItem">
 
-Trade
-
-</a>
-
-<a href="assets.html">
-
-Assets
+<div class="icon">💰</div>
+<span>Invest</span>
 
 </a>
 
-<a href="profile.html">
+<a href="trade.html" class="navItem">
 
-Profile
+<div class="icon">📈</div>
+<span>Trade</span>
+
+</a>
+
+<a href="assets.html" class="navItem">
+
+<div class="icon">💼</div>
+<span>Assets</span>
+
+</a>
+
+<a href="profile.html" class="navItem">
+
+<div class="icon">👤</div>
+<span>Profile</span>
 
 </a>
 
