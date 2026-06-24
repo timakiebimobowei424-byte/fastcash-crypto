@@ -1,0 +1,45 @@
+import { auth }
+from "./config.js";
+
+import {
+sendPasswordResetEmail
+}
+from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+document.getElementById(
+"forgotBtn"
+).onclick = async()=>{
+
+const email =
+document.getElementById(
+"email"
+).value;
+
+if(!email){
+
+alert(
+"Please enter your email address"
+);
+
+return;
+
+}
+
+try{
+
+await sendPasswordResetEmail(
+auth,
+email
+);
+
+alert(
+"Password reset email sent. Check your inbox."
+);
+
+}catch(error){
+
+alert(error.message);
+
+}
+
+};
