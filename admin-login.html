@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FastCash Crypto - Admin Login</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{min-height:100vh;display:flex;justify-content:center;align-items:center;background:#081120;color:white;overflow:hidden}
+body::before{content:"";position:fixed;width:450px;height:450px;background:#22c55e;filter:blur(160px);top:-150px;left:-150px;opacity:.15}
+body::after{content:"";position:fixed;width:450px;height:450px;background:#3b82f6;filter:blur(160px);bottom:-150px;right:-150px;opacity:.15}
+.box{width:92%;max-width:420px;background:rgba(17,24,39,.95);padding:30px;border-radius:24px}
+h1{text-align:center;margin-bottom:10px}
+p{text-align:center;color:#cbd5e1;margin-bottom:25px}
+input{width:100%;padding:15px;border:none;outline:none;border-radius:12px;margin-bottom:15px;background:#1f2937;color:white}
+button{width:100%;padding:15px;border:none;border-radius:12px;background:#22c55e;color:white;font-size:16px;font-weight:bold;cursor:pointer}
+#status{margin-top:15px;text-align:center;color:#cbd5e1}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>Admin Login</h1>
+<p>FastCash Crypto Admin Portal</p>
+<input id="email" type="email" placeholder="Admin Email">
+<input id="password" type="password" placeholder="Password">
+<button id="loginBtn">Login</button>
+<div id="status"></div>
+</div>
+
+<script type="module">
+import { auth } from "./config.js";
+import { signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+const allowedAdmins=["admin@example.com"];
+const status=document.getElementById("status");
+
+document.getElementById("loginBtn").onclick=async()=>{
+const email=document.getElementById("email").value.trim();
+const password=document.getElementById("password").value;
+
+if(!email||!password){
+status.innerText="Enter email and password";
+return;
+}
+
+status.innerText="Signing in...";
+
+try{
+const userCredential=await signInWithEmailAndPassword(auth,email,password);
+const user=userCredential.user;
+
+if(!allowedAdmins.includes(user.email)){
+await signOut(auth);
+status.innerText="Access denied";
+return;
+}
+
+window.location.href="admin-dashboard.html";
+
+}catch(error){
+status.innerText=error.message;
+}
+}
+</script>
+</body>
+</html>
