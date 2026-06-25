@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-
-body{
-
-visibility:hidden;
-
-background:#081120;
-
-}
-
-</style>
-
 <meta charset="UTF-8">
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
@@ -657,11 +645,15 @@ onAuthStateChanged
 
 onAuthStateChanged(auth,(user)=>{
 
-if(user){
+if(!user){
 
-document.body.style.display="block";
+window.location.href="login.html";
 
-}else{
+}
+
+});
+
+</script>
 
 document.body.innerHTML=`
 
