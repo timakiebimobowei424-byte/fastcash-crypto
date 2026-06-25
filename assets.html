@@ -241,23 +241,77 @@ loadPrices();
 </script>
 
 <script type="module">
+
 import { auth } from "./config.js";
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+import {
+onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+document.body.style.display="none";
 
 onAuthStateChanged(auth,(user)=>{
-const loader=document.getElementById("loader");
 
 if(user){
+
+document.body.style.display="block";
+
+const loader=
+document.getElementById("loader");
+
+if(loader){
+
 loader.style.display="none";
-}else{
-document.body.innerHTML=`
-<div style="height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;background:#081120;color:white;text-align:center">
-<h1>Access Restricted</h1>
-<p>Please sign in to continue</p>
-<button onclick="window.location='login.html'" style="padding:15px 25px;border:none;border-radius:12px;background:#22c55e;color:white;margin-top:20px">Go To Login</button>
-</div>`;
+
 }
+
+}else{
+
+document.body.innerHTML=`
+
+<div style="
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:#081120;
+color:white;
+font-family:Arial;
+text-align:center;
+">
+
+<h1>Access Restricted</h1>
+
+<p>
+Please sign in to continue
+</p>
+
+<button
+onclick="window.location='login.html'"
+style="
+padding:15px 25px;
+border:none;
+border-radius:12px;
+background:#22c55e;
+color:white;
+margin-top:20px;
+">
+
+Go To Login
+
+</button>
+
+</div>
+
+`;
+
+document.body.style.display="block";
+
+}
+
 });
+
 </script>
 
 </body>
